@@ -12,6 +12,7 @@ client.on('ready', () => {
     .setDisplayName(`Trump`)
     .setColor(`0xff0000`)
     .setCategoryEmoji('Testing', '☢')
+    .setCategoryEmoji('Moderation', '📌')
 
     console.log(`Logged in as: ${client.user.tag}`)
 })
