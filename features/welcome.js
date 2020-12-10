@@ -32,20 +32,25 @@ module.exports = client => {
                 format: `png`
             })
         )
-        x = canvas.width / 2 - pfp.width / 2
+        x = canvas.width / 2 - pfp.width / 0.39
         y = 25
         ctx.drawImage(pfp, x, y)
 
         ctx.fillStyle = '#ffffff'
-        ctx.font = '28px sans-serif'
-        let text = `Welcome ${member.user.tag}`
-        x = canvas.width / 2 - ctx.measureText(text).width / 2
-        ctx.fillText(text, x, 60 + pfp.height)
+        ctx.font = '27px sans-serif'
+        let text = `${member.user.tag}`
+        x = canvas.width / 1.89 - ctx.measureText(text).width / 2.55
+        ctx.fillText(text, x, -10 + pfp.height)
 
-        ctx.font = `25px sans-serif`
+        ctx.font = `33px sans-serif`
         text = `Member #${guild.memberCount}`
         x = canvas.width / 2 - ctx.measureText(text).width / 2
-        ctx.fillText(text, x, 100 + pfp.height)
+        ctx.fillText(text, x, 40 + pfp.height)
+
+        ctx.font = `55px sans-serif`
+        text = `Welcome`
+        x = canvas.width / 2 - ctx.measureText(text).width / 2
+        ctx.fillText(text, x, -60 + pfp.height)
 
         const Attachment = new MessageAttachment(canvas.toBuffer())
         channel.send('', Attachment)

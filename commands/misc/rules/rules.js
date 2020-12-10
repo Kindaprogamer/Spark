@@ -1,8 +1,9 @@
 const { MessageEmbed } = require('discord.js')
 module.exports = {
+    category: 'Rules', 
     callback: (message, arguments, text) => {
         const Embed = new MessageEmbed()
-        .setColor(`#0099ff`)
+        .setColor(`RANDOM`)
         .setTitle(`Rules for Gamers Guild`)
         .setURL(`https://pcpilotscrew.com`)
         .addFields(
@@ -12,11 +13,10 @@ module.exports = {
             { name: `Rule 4`, value: `Do not encorage people to break the rules`},
             { name: `Rule 5`, value: 'Do not impersonate staff'},
             { name: `Rule 6`, value: 'No spamming in any chats'},
-            { name: `Rule 7`, value: 'Do not argue with staff, their desicons are final, if you don\'t like what happend, to bad'},
+            { name: `Rule 7`, value: 'Do not argue with staff, their desicons are final, if you don\'t like what happend. To bad'},
             { name: `Rule 8`, value: 'Tell <@441151947148623877> he looks good every day'},
             { name: `Rule 9`, value: 'Look after <@759742470493569093> and call cute'},
             { name: `Rule 10`, value: 'No calling the rules gay'},
-            { name: `Rule 11`, value: 'no dissing <@770164450132885534>'},
         )
         .setFooter(`Created by [PCPI] BAe Systems Concorde#9710 (this is the best thing you will ever get)`)
         message.channel.send(Embed)
