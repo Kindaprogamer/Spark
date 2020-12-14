@@ -1,5 +1,5 @@
-const roleSizeSchema = require('../../models/role-size-schema')
-const { fetchChannelData } = require('../../features/role-size-channel')
+const roleSizeSchema = require('../../../models/role-size-schema')
+const { fetchChannelData } = require('../../../features/role-size-channel')
 module.exports = {
     ownerOnly: true,
     callback: async (message, args) => {

@@ -12,10 +12,7 @@ client.on('ready', () => {
     .setColor(`0xff0000`)
     .setCategoryEmoji('Moderation', '📌')
     .setCategoryEmoji('Rules', '📜')
-    .setBotOwner([
-        '608387913256009739',
-        '763645815666376766'
-    ])
+    .setBotOwner(['608387913256009739', '441151947148623877'])
 
     console.log(`Logged in as: ${client.user.tag}`)
 })
