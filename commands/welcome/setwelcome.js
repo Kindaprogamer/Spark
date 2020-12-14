@@ -10,7 +10,7 @@ const loadData = async () => {
 loadData()
 
 module.exports = {
-    requiredPermissions: ['ADMINISTRATOR'],
+    ownerOnly: true,
     callback: async (message) => {
         const { guild, channel } = message
 
