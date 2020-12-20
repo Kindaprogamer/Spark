@@ -44,7 +44,7 @@ module.exports = client => {
         ctx.fillText(text, x, -10 + pfp.height)
 
         ctx.font = `33px sans-serif`
-        text = `We are now at ${guild.memberCount - 7} members`
+        text = `We are now at ${guild.memberCount} members`
         x = canvas.width / 2 - ctx.measureText(text).width / 2
         ctx.fillText(text, x, 40 + pfp.height)
 

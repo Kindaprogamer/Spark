@@ -1,6 +1,5 @@
 const { MessageEmbed } = require('discord.js')
 module.exports = {
-    ownerOnly: true,
     callback: (message, arguments, text) => {
         const Embed = new MessageEmbed()
         .setColor(`RANDOM`)

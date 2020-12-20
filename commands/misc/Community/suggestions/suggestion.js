@@ -1,8 +1,9 @@
 const { statusMessages, suggestionCache } = require('../../../../features/suggestions')
 const { MessageEmbed } = require('discord.js')
+const syntax = 'Please use correct format `/suggest <message id> <status(ACCEPTDED, DENIED)> <optional reason>`'
 
 module.exports = {
-    ownerOnly: true,
+    category: 'Suggestion', 
     callback: async (message, args) => {
         const { guild } = message
 
@@ -10,13 +11,14 @@ module.exports = {
         const status = args.shift().toUpperCase()
         const reason = args.join(' ')
 
+
         message.delete()
-        message.channel.send(`Suggestion has been updated to ${status}`)
+        message.channel.send(`Suggestion status has been updated to ${status}`)
 
         const newStatus = statusMessages[status]
 
         if(!newStatus) {
-            message.reply(`Unknown status: \`"${status}", please use ${Object.keys(statusMessages)}\``)
+            message.reply(`Unknown status: \`"${status}", please use ${Object.keys(statusMessages)}\n${syntax}`)
             return
         }
 

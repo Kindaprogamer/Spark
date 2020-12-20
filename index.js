@@ -10,11 +10,26 @@ client.on('ready', () => {
     .setMongoPath(process.env.MONGO_URI)
     .setDisplayName(`Trump`)
     .setColor(`0xff0000`)
-    .setCategoryEmoji('Moderation', '📌')
-    .setCategoryEmoji('Rules', '📜')
-    .setBotOwner(['608387913256009739', '441151947148623877'])
+    .setCategorySettings([
+        {
+            name: 'Moderation',
+            emoji: '👮‍♂️',
+        },
+        {
+           name: 'Layout',
+           emoji: '📜',
+        },
+        {
+            name: 'Suggestion',
+            emoji: '🚧',
+        },
+    ])
+
+    .setBotOwner('608387913256009739')
 
     console.log(`Logged in as: ${client.user.tag}`)
 })
 
 client.login(process.env.TOKEN)
+
+module.exports.client = client

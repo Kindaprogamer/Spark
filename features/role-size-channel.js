@@ -20,7 +20,7 @@ const fetchChannelData = async () => {
   console.log('CHANNEL DATA:')
   console.log(channelData)
 
-  setTimeout(fetchChannelData, 1000 * 600)
+  setTimeout(fetchChannelData, 1000 * 6000)
 }
 
 module.exports = (client) => {

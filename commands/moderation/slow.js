@@ -1,5 +1,5 @@
 module.exports = {
-    ownerOnly: true,
+    category: 'Moderation', 
     callback: (message, args) => {
         const { channel } = message
 
