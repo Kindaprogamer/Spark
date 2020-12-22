@@ -1,4 +1,5 @@
 module.exports = {
+    category: 'Moderation',
     callback: async (message, args) => {
         if(!args[0]) {
             message.reply('please specify the amount of messages you want cleared')

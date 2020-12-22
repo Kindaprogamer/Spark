@@ -10,7 +10,7 @@ const loadData = async () => {
 loadData()
 
 module.exports = {
-    ownerOnly: true,
+    category: 'Layout',
     callback: async (message) => {
         const { guild, channel } = message
 

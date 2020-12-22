@@ -8,7 +8,7 @@ client.on('ready', () => {
     new WOKCommands(client, 'commands', 'features')
     .setDefaultPrefix('/')
     .setMongoPath(process.env.MONGO_URI)
-    .setDisplayName(`Trump`)
+    .setDisplayName(`Spark's`)
     .setColor(`0xff0000`)
     .setCategorySettings([
         {
@@ -22,6 +22,10 @@ client.on('ready', () => {
         {
             name: 'Suggestion',
             emoji: '🚧',
+        },
+        {
+            name: 'Music',
+            value: '🎵'
         },
     ])
 

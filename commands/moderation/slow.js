@@ -1,4 +1,7 @@
 module.exports = {
+    minArgs: 1,
+    maxArgs: 1,
+    expectedArgs: '<time in seconds>',
     category: 'Moderation', 
     callback: (message, args) => {
         const { channel } = message

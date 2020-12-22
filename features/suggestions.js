@@ -45,7 +45,7 @@ module.exports = client => {
 
             const embed = new MessageEmbed()
             .setColor(status.color)
-            .setAuthor(member.displayName)
+            .setAuthor(member.displayName, member.user.displayAvatarURL())
             .setDescription(content)
             .addFields({
                 name: 'status',

@@ -17,8 +17,8 @@ const fetchChannelData = async () => {
     channelData[key] = [channelId, text]
   }
 
-  console.log('CHANNEL DATA:')
-  console.log(channelData)
+  // console.log('CHANNEL DATA:')
+  // console.log(channelData)
 
   setTimeout(fetchChannelData, 1000 * 6000)
 }
