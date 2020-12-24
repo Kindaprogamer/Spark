@@ -10,8 +10,9 @@ const loadData = async () => {
 loadData()
 
 module.exports = {
+    description: 'Set the welcome channel for welcome image',
     category: 'Layout',
-    callback: async (message) => {
+    callback: async ({ message }) => {
         const { guild, channel } = message
 
         await welcomeSchema.findOneAndUpdate({

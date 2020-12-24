@@ -1,7 +1,8 @@
 module.exports = {
     category: 'Moderation', 
     aliases: ['rr'],
-    callback: (message, arguments) => {
+    description: 'Remove a role from someone',
+    callback: ({ message, arguments }) => {
         const targetUser = message.mentions.users.first()
         if(!targetUser) {
             message.reply(`Please specify a member you want to remove a role from`)

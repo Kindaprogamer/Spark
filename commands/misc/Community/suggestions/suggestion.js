@@ -3,8 +3,9 @@ const { MessageEmbed } = require('discord.js')
 const syntax = 'Please use correct format `/suggest <message id> <status(ACCEPTDED, DENIED)> <optional reason>`'
 
 module.exports = {
-    category: 'Suggestion', 
-    callback: async (message, args) => {
+    category: 'Suggestion',
+    description: 'for server admin to accept or deny any suggestions',
+    callback: async ({ message, args }) => {
         const { guild } = message
 
         const messageId = args.shift()
@@ -13,7 +14,7 @@ module.exports = {
 
 
         message.delete()
-        message.channel.send(`Suggestion status has been updated to ${status}`)
+        message.channel.send(`Suggestion status has been updated to ${status} with reason: ${reason}`)
 
         const newStatus = statusMessages[status]
 

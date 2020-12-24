@@ -1,9 +1,7 @@
 module.exports = {
     category: 'Moderation',  
-    minArgs: 1,
-    maxArgs: 1,
-    expectedArgs: `<Target user's @>`,
-    callback: (message, arguments, text) => {
+    description: 'to ban a person not following the rules',
+    callback: ({ message, arguments, text }) => {
         const { member, mentions } = message
         const target = mentions.users.first()
         if(target) {

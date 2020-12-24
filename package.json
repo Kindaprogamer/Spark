@@ -21,7 +21,7 @@
     "mongoose": "^5.11.4",
     "ms": "^2.1.2",
     "redis": "^3.0.2",
-    "wokcommands": "github:AlexzanderFlores/WOKCommands#dev",
+    "wokcommands": "github:AlexzanderFlores/wokcommands#dev",
     "yt-search": "^2.5.1",
     "ytdl-core": "^4.2.1"
   }

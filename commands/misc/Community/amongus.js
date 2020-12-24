@@ -1,11 +1,12 @@
 const { MessageEmbed } = require('discord.js')
 
 module.exports = {
+  category: '',
   aliases: ['AmongUs', 'AU'],
   minArgs: 2,
   maxArgs: 3,
   expectedArgs: "<Code> <Region>",
-  callback: async (message, arguments, bot) => { 
+  callback: async ({ message, arguments, bot }) => { 
     const [code, region] = arguments
 
     //let specificChannel = message.mentions.channels.first();

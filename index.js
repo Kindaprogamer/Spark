@@ -4,12 +4,30 @@ require('dotenv').config()
 const client = new DiscordJS.Client()
 
 client.on('ready', () => {
+    const showStartupWarnings = false
+    const messagesPath = ''
 
-    new WOKCommands(client, 'commands', 'features')
+    const dbOptions = {
+        keepAlive: true,
+        useNewUrlParser: true,
+        useUnifieldTopology: true,
+        useFindAndModify: false
+    }
+
+    new WOKCommands(client, 'commands', {
+        commandsDir: 'commands',
+        featureDir: 'features',
+        messagesPath,
+        showWarns: showStartupWarnings,
+        dbOptions
+    })
     .setDefaultPrefix('/')
     .setMongoPath(process.env.MONGO_URI)
     .setDisplayName(`Spark's`)
     .setColor(`0xff0000`)
+    // .setCategoryEmoji('Moderation', '👮‍♂️')
+    // .setCategoryEmoji('Layout', '📜')
+    // .setCategoryEmoji('Suggestion', '🚧')
     .setCategorySettings([
         {
             name: 'Moderation',
@@ -22,10 +40,6 @@ client.on('ready', () => {
         {
             name: 'Suggestion',
             emoji: '🚧',
-        },
-        {
-            name: 'Music',
-            value: '🎵'
         },
     ])
 

@@ -1,7 +1,8 @@
 const docs = require('djsdocs')
 module.exports = {
     category: 'Help',
-    callback: (message, args, text) => {
+    description: 'Get coding help directly from the DJS docs',
+    callback: ({ message, args, text }) => {
         docs.get(args.join(' '), message)
     }
 }

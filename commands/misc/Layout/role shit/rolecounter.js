@@ -1,8 +1,9 @@
 const roleSizeSchema = require('../../../../models/role-size-schema')
 const { fetchChannelData } = require('../../../../features/role-size-channel')
 module.exports = {
-  category: 'Layout', 
-    callback: async (message, args) => {
+  category: 'Layout',
+  description: 'Set up a role counter channelto see how many members are in a certain role',
+    callback: async ({ message, args }) => {
 
     const { guild } = message
     const syntax = `${guild.commandPrefix}roleCounter <Voice Channel ID> <Role ID or "all"> <Text>`

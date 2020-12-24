@@ -1,9 +1,7 @@
 module.exports = {
-    minArgs: 1,
-    maxArgs: 1,
-    expectedArgs: '<time in seconds>',
+    description: 'Set a channels slowmode',
     category: 'Moderation', 
-    callback: (message, args) => {
+    callback: ({ message, args }) => {
         const { channel } = message
 
         // if(args.length < 2) {

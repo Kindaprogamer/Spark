@@ -1,7 +1,8 @@
 module.exports = {
     category: 'Moderation', 
     aliases: ['gr'],
-    callback: (message, arguments) => {
+    description: 'give someone a role',
+    callback: ({ message, arguments }) => {
         const targetUser = message.mentions.users.first()
         if(!targetUser) {
             message.reply(`Please specify a member you want to give a role to`)
