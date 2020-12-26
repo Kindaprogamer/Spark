@@ -2,16 +2,16 @@ module.exports = {
     category: 'Moderation', 
     aliases: ['rr'],
     description: 'Remove a role from someone',
-    callback: ({ message, arguments }) => {
+    callback: ({ message, args }) => {
         const targetUser = message.mentions.users.first()
         if(!targetUser) {
             message.reply(`Please specify a member you want to remove a role from`)
             return
         }
 
-        arguments.shift()
+        args.shift()
 
-        const roleName = arguments.join(` `)
+        const roleName = args.join(` `)
         const { guild } = message
         const role = guild.roles.cache.find((role) => {
             return role.name === roleName

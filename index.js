@@ -1,20 +1,22 @@
 const DiscordJS = require('discord.js')
 const WOKCommands = require('wokcommands')
 require('dotenv').config()
-const client = new DiscordJS.Client()
+const client = new DiscordJS.Client({
+    partials: ['MESSAGE', 'REACTION']
+})
 
 client.on('ready', () => {
     const showStartupWarnings = false
-    const messagesPath = ''
+    const messagesPath = 'messages.json'
 
     const dbOptions = {
         keepAlive: true,
         useNewUrlParser: true,
-        useUnifieldTopology: true,
+        useUnifiedTopology: true,
         useFindAndModify: false
     }
 
-    new WOKCommands(client, 'commands', {
+    new WOKCommands(client, {
         commandsDir: 'commands',
         featureDir: 'features',
         messagesPath,
