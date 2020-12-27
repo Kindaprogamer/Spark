@@ -1,7 +1,7 @@
 {
-  "name": "New_cmd_base",
+  "name": "Spark",
   "version": "1.0.0",
-  "description": "",
+  "description": "To begin,type `/help`, look through, all aommands should be there, if there are some commands you would only want people with certain roles to use, use the cmd `/requiredroles [command name] [role name, role id, or tag the role]`.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -24,5 +24,14 @@
     "wokcommands": "github:AlexzanderFlores/wokcommands#dev",
     "yt-search": "^2.5.1",
     "ytdl-core": "^4.2.1"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kindaprogamer/edrocnoC.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Kindaprogamer/edrocnoC/issues"
+  },
+  "homepage": "https://github.com/Kindaprogamer/edrocnoC#readme"
 }
