@@ -31,6 +31,14 @@ body {
     transition: border-bottom 0.5s;
 }
 
+.active-nav-link {
+    border-bottom: 1px solid black;
+}
+  
+.active-nav-link a {
+    color: black !important;
+}
+
 .nav-link-wrapper a {
     color: #8a8a8a;
     text-decoration: none;
