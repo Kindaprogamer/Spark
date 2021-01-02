@@ -1,4 +1,5 @@
 module.exports = {
+    requiredPermissions: ['MANAGE_ROLES'],
     category: 'Moderation', 
     aliases: ['gr'],
     description: 'give someone a role',

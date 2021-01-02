@@ -3,6 +3,7 @@ const { fetchSuggestionChannels } = require('../../../../features/suggestions')
 const suggestionSchema = require('../../../../models/suggestions-schema')
 
 module.exports = {
+    requiredPermissions: ['MANAGE_CHANNELS'],
     category: 'Suggestion',
     description: 'Set a suggestion channel for your server',
     callback: async ({ message }) => {

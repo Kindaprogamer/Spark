@@ -1,3 +1,4 @@
+const { MessageEmbed } = require('discord.js')
 const DiscordJS = require('discord.js')
 const WOKCommands = require('wokcommands')
 require('dotenv').config()
@@ -6,6 +7,8 @@ const client = new DiscordJS.Client({
 })
 
 client.on('ready', () => {
+        client.user.setActivity('/help', {type: 'WATCHING'})
+
     const showStartupWarnings = false
     const messagesPath = 'messages.json'
 
@@ -27,9 +30,7 @@ client.on('ready', () => {
     .setMongoPath(process.env.MONGO_URI)
     .setDisplayName(`Spark's`)
     .setColor(`0xff0000`)
-    // .setCategoryEmoji('Moderation', '👮‍♂️')
-    // .setCategoryEmoji('Layout', '📜')
-    // .setCategoryEmoji('Suggestion', '🚧')
+
     .setCategorySettings([
         {
             name: 'Moderation',

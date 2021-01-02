@@ -10,6 +10,7 @@ const loadData = async () => {
 loadData()
 
 module.exports = {
+    requiredPermissions: ['MANAGE_CHANNELS'],
     description: 'Set the welcome channel for welcome image',
     category: 'Layout',
     callback: async ({ message }) => {

@@ -3,6 +3,7 @@ const { MessageEmbed } = require('discord.js')
 const syntax = 'Please use correct format `/suggest <message id> <status(ACCEPTDED, DENIED)> <optional reason>`'
 
 module.exports = {
+    requiredPermissions: ['MANAGE_CHANNELS'],
     category: 'Suggestion',
     description: 'for server admin to accept or deny any suggestions',
     callback: async ({ message, args }) => {
