@@ -42,11 +42,11 @@ client.on('ready', () => {
             name: 'Suggestion',
             emoji: '🚧',
         },
-        {
-            name: 'Economy',
-            emoji: '💸',
-            hidden: true
-        },
+        // {
+        //     name: 'Economy',
+        //     emoji: '💸',
+        //     hidden: true
+        // },
     ])
 
     .setBotOwner('608387913256009739')
