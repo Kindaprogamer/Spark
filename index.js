@@ -2,9 +2,7 @@ const { MessageEmbed } = require('discord.js')
 const DiscordJS = require('discord.js')
 const WOKCommands = require('wokcommands')
 require('dotenv').config()
-const client = new DiscordJS.Client({
-    partials: ['MESSAGE', 'REACTION']
-})
+const client = new DiscordJS.Client({ partials: ['MESSAGE', 'REACTION'], ws: { properties: {$browser: "Discord Android"}} })
 
 client.on('ready', () => {
         client.user.setActivity('/help', {type: 'WATCHING'})
@@ -43,6 +41,11 @@ client.on('ready', () => {
         {
             name: 'Suggestion',
             emoji: '🚧',
+        },
+        {
+            name: 'Economy',
+            emoji: '💸',
+            hidden: true
         },
     ])
 

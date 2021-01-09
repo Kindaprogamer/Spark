@@ -17,16 +17,18 @@ module.exports = {
             .setTitle('KICKED')
             .setDescription(`<@${targetMember.id}> has been kicked`)
             .setFooter(`Kick isseued by ${message.author.tag}`)
+            message.delete()
 
-            message.reply(yEmbed)
+            message.reply(yEmbed).then(m => m.delete({timeout: 3000}))
         } else {
 
             let nEmbed = new MessageEmbed()
             .setTitle('ERROR')
             .setDescription('Please state someone to kick')
             .setFooter(`Kick message issued by ${message.author.tag}`)
+            message.delete()
 
-            message.channel.send(nEmbed)
+            message.channel.send(nEmbed).then(m => m.delete({timeout: 3000}))
         }
     }
 }

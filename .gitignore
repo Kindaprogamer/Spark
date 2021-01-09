@@ -2,3 +2,4 @@
 node_modules
 /website/images/
 /.vscode/
+Economy.sqlite

@@ -21,7 +21,7 @@ module.exports = {
             .setFooter(`Message issued by ${message.author.tag}`)
 
         if(isNaN(duration)) {
-            message.reply(NaNEmbed)
+            message.reply(NaNEmbed).then(m => m.delete({timeout: 3000}))
             return
         }
         let slowEmbed = new MessageEmbed()
@@ -30,7 +30,9 @@ module.exports = {
         .setFooter(`Message issued by ${message.author.tag}`)
 
         channel.setRateLimitPerUser(duration, args.join(' '))
-        message.reply(slowEmbed)
+        message.delete()
+
+        message.reply(slowEmbed).then(m => m.delete({timeout: 3000}))
     }
 
 }

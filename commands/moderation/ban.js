@@ -17,16 +17,18 @@ module.exports = {
             .setTitle('BANNED')
             .setDescription(`<@${targetMember.id}> has been banned`)
             .setFooter(`ban isseued by ${message.author.tag}`)
+            message.delete()
 
-            message.reply(yEmbed)
+            message.reply(yEmbed).then(m => m.delete({timeout: 3000}))
         } else {
 
             let nEmbed = new MessageEmbed()
             .setTitle('ERROR')
             .setDescription('Please state someone to ban')
             .setFooter(`Ban message issued by ${message.author.tag}`)
+            message.delete()
 
-            message.channel.send(nEmbed)
+            message.channel.send(nEmbed).then(m => m.delete({timeout: 3000}))
         }
     }
 }

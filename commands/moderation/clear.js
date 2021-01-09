@@ -12,7 +12,9 @@ module.exports = {
             .setDescription('Please specify the amount of messages you want cleared')
             .setColor('random')
             .setFooter(`Message requested by ${message.author.tag}`)
-            message.reply(msgEmbed)
+            message.delete()
+
+            message.reply(msgEmbed).then(m => m.delete({timeout: 3000}))
             return
         }
 
@@ -22,7 +24,9 @@ module.exports = {
             .setDescription('Please specify an actual number')
             .setColor('random')
             .setFooter(`Message requested by ${message.author.tag}`)
-            message.reply(NaNEmbed)
+            message.delete()
+
+            message.reply(NaNEmbed).then(m => m.delete({timeout: 3000}))
             return
         }
         if(args[0] > 100) {
@@ -31,7 +35,9 @@ module.exports = {
             .setDescription('You can only clear upto 100 messages at a time')
             .setColor('random')
             .setFooter(`Message requested by ${message.author.tag}`)
-            message.reply(TMMEmbed)
+            message.delete()
+
+            message.reply(TMMEmbed).then(m => m.delete({timeout: 3000}))
         }
 
         if(args[0] < 1) {
@@ -40,7 +46,9 @@ module.exports = {
             .setDescription('Please specify at least one message to clear')
             .setColor('random')
             .setFooter(`Message requested by ${message.author.tag}`)
-            message.reply(LMCEmbed)
+            message.delete()
+
+            message.reply(LMCEmbed).then(m => m.delete({timeout: 3000}))
         }
 
         await message.channel.messages.fetch({limit: args[0]}).then(messages => {
@@ -50,7 +58,9 @@ module.exports = {
             .setDescription(`Cleared a total of ${args[0]} messages`)
             .setColor('random')
             .setFooter(`Message requested by ${message.author.tag}`)
-            message.channel.send(ClearEmbed)
+            message.delete()
+
+            message.channel.send(ClearEmbed).then(m => m.delete({timeout: 3000}))
         })
     }
 }

@@ -28,7 +28,7 @@ module.exports = (client) => {
 
   const updateCount = (guild, roleId = 'all') => {
     const key = `${guild.id}-${roleId}`
-    console.log('KEY:', key)
+    // console.log('KEY:', key)
     const data = channelData[key]
     if (data) {
       const [channelId, text] = data
