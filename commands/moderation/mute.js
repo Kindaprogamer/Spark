@@ -1,7 +1,7 @@
 const { MessageEmbed } = require('discord.js')
 
 module.exports = {
-    requiredPermissions: ['MUTE_MEMBERS'],
+    requiredPermissions: ['KICK_MEMBERS'],
     category: 'Moderation',  
     description: 'to ban a person not following the rules',
     callback: ({ message, args, text }) => {
@@ -12,7 +12,7 @@ module.exports = {
 
         let reason = args.slice(1).join(" ")
         if(!reason) {
-            return reason = "No reason given"
+            reason = "No reason given"
         }
 
         const muteRole = message.guild.roles.cache.find(r => r.name === 'Muted')
