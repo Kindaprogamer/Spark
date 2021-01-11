@@ -1,6 +1,7 @@
 const { MessageEmbed, Message } = require('discord.js')
 
 module.exports = {
+    ownerOnly: true,
     callback: ({ message }) => {
         const guilds = client.guilds.cache.array()
 
