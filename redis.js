@@ -1,4 +1,4 @@
-const redis = require(redis)
+const redis = require('redis')
 require('dotenv').config()
 const { redisPath } = require(process.env.REDIS_PATH)
 
