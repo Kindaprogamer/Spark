@@ -24,7 +24,7 @@ client.on('ready', () => {
         showWarns: showStartupWarnings,
         dbOptions
     })
-    .setDefaultPrefix('/')
+    .setDefaultPrefix('s!')
     .setMongoPath(process.env.MONGO_URI)
     .setDisplayName(`Spark's`)
     .setColor(`0xff0000`)
