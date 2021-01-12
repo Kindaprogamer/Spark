@@ -37,7 +37,7 @@ module.exports = {
 
         const seconds = duration * durations[durationType]
 
-        const target = mentions.first()
+        const target = message.mentions.users.first()
 
         if(!target) {
             channel.send('Please tag a user you would like to mute ' + syntax)
