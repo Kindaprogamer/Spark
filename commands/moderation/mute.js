@@ -1,28 +1,38 @@
-const { MessageEmbed } = require('discord.js')
+const syntax = '/mute <target\'s @> <duration> <durationType: m, d, y, perm'
 
+const redis = require('../../redis')
 module.exports = {
     requiredPermissions: ['KICK_MEMBERS'],
     category: 'Moderation',  
     description: 'to ban a person not following the rules',
     callback: ({ message, args, text }) => {
-        let mutee = message.mentions.members.first() || message.guild.members.cache.get(args[0])
-        if(!mutee) {
-            return message.channel.send('You need to specify someone to mute')
+        const { member, channel, content } = message
+
+        const split = content.split(' ')
+
+        if(split.length !== 4) {
+            channel.send('Please use correct format ' + syntax)
         }
 
-        let reason = args.slice(1).join(" ")
-        if(!reason) {
-            reason = "No reason given"
+        const duration = split[2]
+        const durationType = split[3]
+
+        if(isNaN(duration)) {
+            channel.send('Please provide a number for the duration ' + syntax)
+            return
         }
 
-        const muteRole = message.guild.roles.cache.find(r => r.name === 'Muted')
-        if(!muteRole) {
-            return message.channel.send('Please make sure the mute role is named `Muted`')
+        const durations = {
+            m: 60,
+            h: 60 * 60,
+            d: 60* 60* 24,
+            perm: -1,
         }
 
-        mutee.roles.add(muteRole.id).then(() => {
-            message.delete()
-            message.channel.send(`<@${mutee.user.id}> was sucessfully muted `).then(m => m.delete({timeout: 3000}))
-        })
+        if(!durations[durationType]) {
+            channel.send('Please provi;e a valid durationType ' + syntax)
+            return
+        }
+
     }
 }
