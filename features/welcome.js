@@ -22,7 +22,7 @@ module.exports = client => {
         const ctx = canvas.getContext('2d')
 
         const background = await Canvas.loadImage(
-            path.join(__dirname, '../background.png')
+            path.join(__dirname, '../transparent.png')
         )
         let x = 0
         let y = 0
