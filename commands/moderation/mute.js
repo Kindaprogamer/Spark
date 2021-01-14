@@ -1,5 +1,5 @@
-const syntax = '/mute <target\'s @> <duration> <durationType: m, d, y, perm'
-const key = 'muted-'
+const syntax = '[p]mute <target\'s @> <duration> <durationType: m, d, y, perm'
+const redisKeyPrefix = 'muted-'
 
 const redis = require('../../redis')
 module.exports = {
@@ -7,7 +7,6 @@ module.exports = {
     category: 'Moderation',  
     description: 'to ban a person not following the rules',
     callback: async ({ message, args, text }) => {
-        const redisKeyPrefix = 'muted-'
         
         redis.expire((message) => {
             if (message.startsWith(redisKeyPrefix)) {
@@ -39,8 +38,6 @@ module.exports = {
         
           command(client, 'mute', async (message) => {
             // !mute @ duration duration_type
-        
-            const syntax = '[p]mute <target\'s @> <duration as a number> <m, h, d, or life>'
         
             const { member, channel, content, mentions, guild } = message
         
