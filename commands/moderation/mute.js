@@ -1,5 +1,6 @@
 const syntax = '[p]mute <target\'s @> <duration> <durationType: m, d, y, perm'
 const redisKeyPrefix = 'muted-'
+const { client } = require('../../index')
 
 const redis = require('../../redis')
 module.exports = {
@@ -36,7 +37,6 @@ module.exports = {
             }
           }
         
-          command(client, 'mute', async (message) => {
             // !mute @ duration duration_type
         
             const { member, channel, content, mentions, guild } = message
@@ -89,15 +89,14 @@ module.exports = {
               const redisKey = `${redisKeyPrefix}${id}-${guild.id}`
         
               if (seconds > 0) {
-                redisClient.set(redisKey, 'true', 'EX', 10)
+                redisClient.set(redisKey, 'true', 'EX', seconds)
               } else {
                 redisClient.set(redisKey, 'true')
               }
             } finally {
               redisClient.quit()
             }
-        })
         
     }
 
-}
+  }
