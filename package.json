@@ -11,6 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "@discordjs/opus": "github:discordjs/opus",
+    "aki-api": "^5.2.1",
     "canvas": "^2.6.1",
     "common-tags": "^1.8.0",
     "discord.js": "^12.5.1",

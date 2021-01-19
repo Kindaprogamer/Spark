@@ -42,11 +42,10 @@ client.on('ready', () => {
             name: 'Suggestion',
             emoji: '🚧',
         },
-        // {
-        //     name: 'Economy',
-        //     emoji: '💸',
-        //     hidden: true
-        // },
+        {
+            name: 'Fun',
+            emoji: '🎮',
+        },
     ])
 
     .setBotOwner('608387913256009739')
@@ -56,4 +55,4 @@ client.on('ready', () => {
 
 client.login(process.env.TOKEN)
 
-module.exports.client = client
+module.exports = {client}
