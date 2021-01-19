@@ -5,7 +5,7 @@ emojis = ["👍", "👎", "❔", "🤔", "🙄", "❌"],
 Started = new Set();
 
 module.exports = {
-
+category: 'Fun',
 callback: async ({message}) => {
 message.channel.send('Please wait for the game to fully start up. If the reactions are not working, unreact and react again.')
 if (!Started.has(message.author.id)) Started.add(message.author.id);
