@@ -5,7 +5,7 @@ const yts = require("yt-search");
 module.exports = {
     commands: ['play', 'p'],
     callback: async (message, args) => {
-        const channel = message.member.voiceChannel;
+        const channel = message.member.cache.voiceChannel;
         if (!channel) return message.channel.send("You need to be in a voice channel to play music!", message.channel);
 
         const permissions = channel.permissionsFor(message.client.user);
