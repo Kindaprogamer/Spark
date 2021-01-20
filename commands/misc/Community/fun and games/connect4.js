@@ -1,4 +1,6 @@
 const { MessageEmbed } = require('discord.js')
+const em = ["✅", "❌"]
+const num = ["1️⃣", "2️⃣", "3️⃣", "4️⃣", "5️⃣", "6️⃣", "7️⃣"]
 
 module.exports = {
     aliases: ['connect4', 'con4', 'c4'],
@@ -12,9 +14,10 @@ module.exports = {
 
         const question = await message.channel.send(`${opponent}, would you like to play connect 4 with ${challenger}?`)
 
-        ["✅", "❌"].forEach(async el => await question.react(el));
+        em.forEach(async el => await question.react(el))
 
-        const filter = (reaction, user) => ["✅", "❌"].includes(reaction.emoji.name) && user.id === opponent.id
+
+        const filter = (reaction, user) => em.includes(reaction.emoji.name) && user.id === opponent.id
 
         const response = await question.awaitReactions(filter, { max: 1 })
 
@@ -53,15 +56,15 @@ module.exports = {
             
             const gameMessage = await message.channel.send(initial)
 
-            ["1️⃣", "2️⃣", "3️⃣", "4️⃣", "5️⃣", "6️⃣", "7️⃣"].forEach(async el => gameMessage.react(el));
+            num.forEach(async el => gameMessage.react(el));
 
-            const gameFilter = (reaction, user) => ["1️⃣", "2️⃣", "3️⃣", "4️⃣", "5️⃣", "6️⃣", "7️⃣"].includes(reaction.emoji.name) && (user.id === opponent.id || user.id === challenger.id)
+            const gameFilter = (reaction, user) => num.includes(reaction.emoji.name) && (user.id === opponent.id || user.id === challenger.id)
 
             const gameCollector = gameMessage.createReactionCollector(gameFilter)
 
             const gameData = [
-                { member: challenge, playerColor: "🔴" },
-                { member: oppenent, playerColor: "🟡" }
+                { member: challenger, playerColor: "🔴" },
+                { member: opponent, playerColor: "🟡" }
             ]
 
             let player = 0
