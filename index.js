@@ -1,8 +1,8 @@
 const { MessageEmbed } = require('discord.js')
-const DiscordJS = require('discord.js')
+const Discord= require('discord.js')
 const WOKCommands = require('wokcommands')
 require('dotenv').config()
-const client = new DiscordJS.Client({ partials: ['MESSAGE', 'REACTION'], ws: { properties: {$browser: "Discord Android"}} })
+const client = new Discord.Client({ partials: ['MESSAGE', 'REACTION'], ws: { properties: {$browser: "Discord Android"}} })
 
 client.on('ready', () => {
         client.user.setActivity('/help', {type: 'WATCHING'})
@@ -49,6 +49,7 @@ client.on('ready', () => {
     ])
 
     .setBotOwner('608387913256009739')
+    .testServers('760415479537074206')
 
     console.log(`Logged in as: ${client.user.tag}`)
 })
