@@ -49,7 +49,6 @@ client.on('ready', () => {
     ])
 
     .setBotOwner('608387913256009739')
-    .testServers('760415479537074206')
 
     console.log(`Logged in as: ${client.user.tag}`)
 })

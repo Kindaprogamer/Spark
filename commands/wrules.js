@@ -1,7 +1,6 @@
 const { MessageEmbed } = require('discord.js')
 
 module.exports = {
-    testServer: true,
     ownerOnly: true,
     callback: ({ message }) => {
         let embed = new MessageEmbed()
