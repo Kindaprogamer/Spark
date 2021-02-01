@@ -15,29 +15,29 @@ module.exports = {
 
 
         message.delete()
-        message.channel.send(`Suggestion status has been updated to ${status} with reason: ${reason}`)
+        message.channel.send(`Suggestion status has been updated to ${status} with reason: ${reason}`).then(m => m.delete({ timeout: 5000 }))
 
         const newStatus = statusMessages[status]
 
         if(!newStatus) {
-            message.reply(`Unknown status: \`"${status}", please use ${Object.keys(statusMessages)}\n${syntax}`)
+            message.reply(`Unknown status: \`"${status}", please use ${Object.keys(statusMessages)}\n${syntax}`).then(m => m.delete({ timeout: 5000 }))
             return
         }
 
         const channelId = suggestionCache()[guild.id]
 
         if(!channelId) {
-            message.reply('An error occured,please contact <@608387913256009739>')
+            message.reply('An error occured,please contact <@608387913256009739>').then(m => m.delete({ timeout: 5000 }))
         }
 
         const channel = guild.channels.cache.get(channelId)
         if(!channel) {
-            message.reply('the suggestion channel no longer exists')
+            message.reply('the suggestion channel no longer exists').then(m => m.delete({ timeout: 5000 }))
         }
 
         const targetMessage = await channel.messages.fetch(messageId, false, true)
         if(!targetMessage) {
-            message.reply('That message no longer exists, but *HOW* is the question')
+            message.reply('That message no longer exists, but *HOW* is the question').then(m => m.delete({ timeout: 5000 }))
             return
         }
 

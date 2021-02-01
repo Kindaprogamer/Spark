@@ -3,3 +3,4 @@ node_modules
 /website/images/
 /.vscode/
 Economy.sqlite
+wpateron-access.txt

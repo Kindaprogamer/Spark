@@ -12,11 +12,7 @@ module.exports = {
         }
         let embed = new MessageEmbed()
 
-        .setTitle('INFORMATION')
-        .setDescription(`HELLO! Welcome to the Gamers Guild. We hope you have a nice time.\n
-        Since you are here, you may want to know about this place, well, this server is here for people to meet-up, play games together and more.`)
-        .setColor('RANDOM')
-        .addFields({ name: '__ALL CHANNELS__', value: '\u200b' })
+        .setTitle('CHANNEL INFORMATION')
         .addFields(
             { name: 'INFO CHANNELS', value: `
             <#766035996314697759> - Where all new people are shown.\n
@@ -60,8 +56,33 @@ module.exports = {
         .setFooter(`If this needs changing, ping Kindaprogamer#9710 in general`)
         .setThumbnail('https://cdn.discordapp.com/icons/760415479537074206/a2856f30fe95702f0e77c762fa7e6613.webp?size=128')
         .setURL('https://discordapp.com/terms')
-        message.channel.send(embed)
         // .then(m => m.delete({ timeout: 4500 }))
+
+        let eEmbed = new MessageEmbed()
+        .setTitle('SEEVER INFO')
+        .setColor('RANDOM')
+        .setDescription('Hi there and welcome to the Gamers Guild')
+        .addFields(
+            { name: 'Welcome to the \*Gamers Guild\*', value: `` },
+            { name: 'Info about the server', value: `So, since you are here, you may want some info on the server and staff so here you go` },
+            { name: '**__STAFF TEAM__**', value: `
+            **• Owner:**
+            - danny boyo 3>#9061\n
+            **• Head Admin:**
+            - BrightKnight#0399\n
+            **• Admins':**
+            - F*ck you#9562
+            - Kindaprogamer#971\n
+            **• Moderators:**
+            - iiEv4ns#6969
+            - smeloise#5155\n
+            ` },
+            { name: '', value: `` }
+        )
+
+        // message.channel.send(eEmbed).then(message.channel.send(embed))
+        message.reply(eEmbed).then(m => m.delete({ timeout: 4000 }))
+        
     }
 }
         
