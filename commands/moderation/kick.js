@@ -1,7 +1,6 @@
 const { MessageEmbed } = require('discord.js')
 
 module.exports = {
-    requiredPermissions: ['BAN_MEMBERS', 'KICK_MEMBERS'],
     category: 'Moderation',  
     description: 'to kick a person not following the rules',
     callback: ({ message, arguments, text }) => {

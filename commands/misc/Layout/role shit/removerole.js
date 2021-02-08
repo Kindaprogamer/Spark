@@ -1,5 +1,4 @@
 module.exports = {
-    requiredPermissions: ['MANAGE_ROLES'],
     category: 'Moderation', 
     aliases: ['rr'],
     description: 'Remove a role from someone',

@@ -1,7 +1,6 @@
 const warnSchema = require('../../../models/warn-schema')
 
 module.exports = {
-    requiredPermissions: ['KICK_MEMBERS'],
     description: 'Set a channels slowmode',
     category: 'Moderation', 
     callback: async ({ message, args }) => {

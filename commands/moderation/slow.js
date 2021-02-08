@@ -1,5 +1,4 @@
 module.exports = {
-    requiredPermissions: ['BAN_MEMBERS', 'KICK_MEMBERS'],
     description: 'Set a channels slowmode',
     category: 'Moderation', 
     callback: ({ message, args }) => {

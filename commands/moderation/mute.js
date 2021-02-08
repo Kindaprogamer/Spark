@@ -4,7 +4,6 @@ const { client } = require('../../index')
 
 const redis = require('../../redis')
 module.exports = {
-    requiredPermissions: ['KICK_MEMBERS'],
     category: 'Moderation',  
     description: 'to ban a person not following the rules',
     callback: async ({ message, args, text }) => {

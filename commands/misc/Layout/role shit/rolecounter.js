@@ -3,7 +3,6 @@ const { fetchChannelData } = require('../../../../features/role-size-channel')
 const { MessageEmbed } = require('discord.js')
 
 module.exports = {
-  requiredPermissions: ['MANAGE_CHANNELS'],
   category: 'Layout',
   description: 'Set up a role counter channelto see how many members are in a certain role',
     callback: async ({ message, args }) => {

@@ -1,7 +1,6 @@
 const { MessageEmbed }  = require('discord.js')
 
 module.exports = {
-    requiredPermissions: ['BAN_MEMBERS', 'KICK_MEMBERS'],
     category: 'Moderation',
     description: 'To clear a number of messages upto 100',
     callback: async ({ message, args }) => {
